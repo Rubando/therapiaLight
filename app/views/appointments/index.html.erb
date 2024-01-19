@@ -1,0 +1,18 @@
+
+
+<h1>My Appointments</h1>
+
+<div id="appointments">
+  <% @appointments.each do |appointment| %>
+    <% if appointment.user == current_user%>
+    <%= render appointment %>
+    <p>
+      <%= link_to "Show this appointment", appointment, class: "btn btn-primary" %>
+    </p>
+    <%end%>
+  <% end %>
+</div>
+
+<%= link_to "New appointment", new_appointment_path, class: "btn btn-primary" %>
+
+

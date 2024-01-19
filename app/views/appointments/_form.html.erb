@@ -1,0 +1,45 @@
+<%= form_with(model: appointment) do |form| %>
+  <% if appointment.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(appointment.errors.count, "error") %> prohibited this appointment from being saved:</h2>
+
+      <ul>
+        <% appointment.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class= "field form-group">
+    <%= form.label :doctor, style: "display: block" %>
+    <%= form.text_field :doctor, class:"form-control" %>
+  </div>
+  <li class="nav-item">
+        <%= link_to "Click Here To View Doctors", doctors_path, class: "btn btn-secondary"%>
+    </li>
+  <div class= "field form-group">
+    <%= form.label :date, style: "display: block" %>
+    <%= form.datetime_field :date, class:"form-control" %>
+  </div>
+
+  <div class= "field form-group">
+    <%= form.label :condition, style: "display: block" %>
+    <%= form.text_field :condition, class:"form-control" %>
+  </div>
+
+  <div class= "field form-group">
+    <%= form.label :details, style: "display: block" %>
+    <%= form.text_area :details, class:"form-control" %>
+  </div>
+
+    <div class= "field form-group">
+    
+    <%= form.number_field :user_id, class:"form-control", value: current_user.id, type: :hidden %>
+  </div>
+ 
+
+  <div>
+    <%= form.submit class: 'btn btn-secondary'%>
+  </div>
+<% end %>

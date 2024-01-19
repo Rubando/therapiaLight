@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  doctor: MyString
+  date: 2024-01-18 12:27:06
+  condition: MyString
+  details: MyText
+
+two:
+  doctor: MyString
+  date: 2024-01-18 12:27:06
+  condition: MyString
+  details: MyText

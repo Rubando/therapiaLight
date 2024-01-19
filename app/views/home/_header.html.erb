@@ -1,0 +1,69 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+  	<%= link_to 'TherapiaLight', root_path, class:"navbar-brand"%>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+        	<%= link_to "How It Works", home_howItWorks_path, class: "nav-link active"%>
+        </li>
+        <li class="nav-item">
+        	<%= link_to "Pricing", home_pricing_path, class: "nav-link"%>
+        </li>
+  
+        <% if user_signed_in? %>
+
+          <li class="nav-item">
+          <%= link_to "Book An Appointment", new_appointment_path, class: "nav-link"%>
+          </li>
+
+
+            <li class="nav-item">
+              <%= link_to "My Appointments", appointments_path, class: "nav-link"%>
+            </li>
+        
+           <li class="nav-item">
+          <%= link_to "Sign Out",destroy_user_session_path, method: :delete, class: "nav-link"%>
+          </li>
+                <li class="nav-item">
+          <%= link_to "Edit Profile", edit_user_registration_path, class: "nav-link"%>
+          </li>
+
+
+        <% else %>
+            <li class="nav-item">
+              <%= link_to "Sign Up", new_user_registration_path, class: "nav-link"%>
+            </li>
+            <li class="nav-item">
+              <%= link_to "Sign In", new_user_session_path, class: "nav-link"%>
+            </li>
+        <%end%>
+
+
+       
+        
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Resources
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">What is Physiotherapy</a></li>
+            <li><a class="dropdown-item" href="#">Common Injuries</a></li>
+            <li><a class="dropdown-item" href="#">Rehab Plans</a></li>
+            <li><a class="dropdown-item" href="#">News and Research</a></li>
+            <li><a class="dropdown-item" href="#">Videos</a></li>
+            <li><a class="dropdown-item" href="#">Essential Equipment</a></li>
+            <li><a class="dropdown-item" href="#">Medical Insurance Forms</a></li>
+            <li><a class="dropdown-item" href="#">Blog</a></li>
+          </ul>
+        </li>
+
+        <li><a class="nav-item" href="#">416-526-6933</a></li>
+      </ul>
+
+    </div>
+  </div>
+</nav>
